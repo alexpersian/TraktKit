@@ -58,20 +58,15 @@ public struct StatusCodes {
     static func message(for status: Int) -> String? {
         if status == StatusCodes.Unauthorized {
             return "App not authorized. Please sign in again."
-        }
-        else if status == StatusCodes.Forbidden {
+        } else if status == StatusCodes.Forbidden {
             return "Invalid API Key"
-        }
-        else if status == StatusCodes.NotFound {
+        } else if status == StatusCodes.NotFound {
             return "API not found"
-        }
-        else if status == StatusCodes.RateLimitExceeded {
+        } else if status == StatusCodes.RateLimitExceeded {
             return "Rate Limit Exceeded. Please try again in a minute."
-        }
-        else if status == StatusCodes.ServiceOverloaded || status == StatusCodes.ServerError {
+        } else if status == StatusCodes.ServiceOverloaded || status == StatusCodes.ServerError {
             return "Trakt.tv is down. Please try again later..."
-        }
-        else if status == StatusCodes.CloudflareError || status == StatusCodes.CloudflareError2 || status == StatusCodes.CloudflareError3 {
+        } else if status == StatusCodes.CloudflareError || status == StatusCodes.CloudflareError2 || status == StatusCodes.CloudflareError3 {
             return "CloudFlare error. Please try again later..."
         }
         
@@ -87,9 +82,8 @@ public enum SearchType: String {
     case person
     case list
     
-    
     public struct Field {
-        let title: String
+        public let title: String
     }
     public struct Fields {
         public struct Movie {
@@ -217,9 +211,7 @@ public enum ExtendedType: String, CustomStringConvertible {
     case Episodes = "episodes"
     
     public var description: String {
-        get {
-            return self.rawValue
-        }
+        return self.rawValue
     }
 }
 
